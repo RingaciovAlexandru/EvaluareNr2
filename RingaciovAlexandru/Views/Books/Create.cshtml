@@ -1,0 +1,29 @@
+﻿@model NumePrenume.Models.Book
+
+<h2>Adaugă Carte</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Denumire" class="control-label"></label>
+        <input asp-for="Denumire" class="form-control" />
+        <span asp-validation-for="Denumire" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Autor" class="control-label"></label>
+        <input asp-for="Autor" class="form-control" />
+        <span asp-validation-for="Autor" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Editura" class="control-label"></label>
+        <input asp-for="Editura" class="form-control" />
+        <span asp-validation-for="Editura" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Pret" class="control-label"></label>
+        <input asp-for="Pret" class="form-control" />
+        <span asp-validation-for="Pret" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Salvează" class="btn btn-primary" />
+    </div>
+</form>

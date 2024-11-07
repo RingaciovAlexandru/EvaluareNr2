@@ -1,0 +1,43 @@
+﻿@model IEnumerable<NumePrenume.Models.Book>
+
+<h2>Stoc de Cărți</h2>
+
+<p>
+    <a asp-action="Create">Adaugă Carte</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Denumire</th>
+            <th>Autor</th>
+            <th>Editura</th>
+            <th>Pret</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Denumire</td>
+                <td>@item.Autor</td>
+                <td>@item.Editura</td>
+                <td>@item.Pret</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Editează</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Șterge</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="FilterByPrice">Filtrare după preț (150-500 lei)</a> |
+    <a asp-action="FilterByAuthor">Filtrare după autor (consoană)</a> |
+    <a asp-action="FilterByMaxPrice">Filtrare după preț maximal</a> |
+    <a asp-action="FilterByMinPrice">Filtrare după preț minimal</a>
+</p>
